@@ -2,41 +2,42 @@ import java.util.Scanner;
 
 public class test 
     {
-
         public static void main(String[] args) 
          {
-            int a[][];
             Scanner scanner = new Scanner(System.in);
-            System.out.print("Nhap so hang: ");
-            int n = scanner.nextInt();
-            System.out.print("Nhap so cot: ");
-            int m = scanner.nextInt();
-
-            a = new int [n][m];
-
-            for (int i = 0 ; i < n ; i++)
+            System.out.println("Phuong trinh ax^2 + bx + c = 0: ");
+            System.out.print("Nhap a (a > 0): ");
+            int a = scanner.nextInt();
+            while (a <= 0) 
             {
-                System.out.println();
-                for ( int j = 0 ; j < m ; j++)
-                {
-                    System.out.print("Nhap gia tri a["+(i+1)+"]" + "["+(j+1)+"]: ");
-                    a[i][j] = scanner.nextInt();
-                }
+                System.out.print("Nhap lai a: ");
+                a = scanner.nextInt();
+            }
+            System.out.print("Nhap b: ");
+            int b = scanner.nextInt();
+            System.out.print("Nhap c: ");
+            int c = scanner.nextInt();
+
+            float delta = (b*b) - (4 * a * c);
+            
+            if(delta < 0)
+            {
+                System.out.println("Phuong trinh vo nghiem!");
             }
 
-            System.out.println();
-            System.out.println("Ma tran vua nhap voi " + n + " hang va " + m + " cot:");
-            for (int i = 0 ; i < n ; i++)
+            else if (delta == 0)
             {
-                System.out.println();
-                for(int j = 0 ; j < m ; j++)
-                {
-                    System.out.print(a[i][j] + " ");
-                }
+                float x = (-b) / (2*a);
+                System.out.println("Phuong trinh co nghiem kep x = " + x);
             }
 
-            System.out.println();
-
-            scanner.close();
+            else 
+            {
+                float x1 = (float)((-b + Math.sqrt(delta)) / 2*a);
+                float x2 = (float)((-b - Math.sqrt(delta)) / 2*a);
+                System.out.println("Phuong trinh co hai nghiem phan biet: ");
+                System.out.println("x1 = " + x1);
+                System.out.println("x2 = " + x2);
+            }
          }  
     }
