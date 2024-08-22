@@ -39,5 +39,6 @@ public class test
                 System.out.println("x1 = " + x1);
                 System.out.println("x2 = " + x2);
             }
+            scanner.close();
          }  
     }
