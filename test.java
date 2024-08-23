@@ -6,9 +6,9 @@ public class test
          {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Phuong trinh ax^2 + bx + c = 0: ");
-            System.out.print("Nhap a (a > 0): ");
+            System.out.print("Nhap a (a != 0): ");
             int a = scanner.nextInt();
-            while (a <= 0) 
+            while (a == 0) 
             {
                 System.out.print("Nhap lai a: ");
                 a = scanner.nextInt();
